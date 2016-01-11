@@ -43,7 +43,7 @@
         <?=$this->content?>
     </div>
     <div id="footer">
-        Copyright
+        Powered by LeFramework v. <?=App::$version?>
     </div>
     </body>
 </html>

@@ -12,6 +12,7 @@ class App
     public static $appName;
     public static $layout;
     public static $controller;
+    public static $version = '0.1.1 (Alpha)';
 
     private static $config;
 

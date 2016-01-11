@@ -8,7 +8,7 @@
 
 return [
     // Application name
-    'appName'           => 'New Web Application',
+    'appName'           => 'WebApp',
     // Application layout
     'layout'            => 'layout/main',
     // Default application controller
