@@ -9,8 +9,8 @@
 return [
     // Application name
     'appName'           => 'WebApp',
-    // Application layout
-    'layout'            => 'layout'.DIRECTORY_SEPARATOR.'main',
+    // Application layout. Vals: "default", "simple"
+    'layout'            => 'default',
     // Default application controller
     'defaultController' => 'SiteController',
     // Files that will be automatically included to application

@@ -31,22 +31,21 @@
 <!--                        <a href="#">Link 1</a>-->
 <!--                    </li>-->
 <!--                </ul>-->
-                <p class="navbar-text"><?=App::$appName?></p>
             </div>
         </div>
     </nav>
     <!-- Content -->
-    <div class="container">
+    <main class="container">
         <!-- Breadcrumbs -->
-        <ul class="breadcrumb">
-            <?=$this->getBreadcrumbs()?>
-        </ul>
-        <?=$this->content?>
-    </div>
-    <div id="footer">
+<!--        <ul class="breadcrumb">-->
+<!--            --><?//=$this->getBreadcrumbs()?>
+<!--        </ul>-->
+        <?=$content?>
+    </main>
+    <footer>
         <small class="text-muted">
-            Powered by LeFramework v. <?=App::$version?>
+            Powered by LeFramework v<?=App::$version?>
         </small>
-    </div>
+    </footer>
     </body>
 </html>

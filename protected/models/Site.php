@@ -6,7 +6,7 @@
  * Date: 29.12.2015
  * Time: 22:14
  */
-class Site
+class Site extends Model
 {
 
 }

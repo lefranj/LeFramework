@@ -9,13 +9,17 @@
 class Controller
 {
     public $breadcrumbs = [];
+    public $layout;
+    public $title = '';
+    public $caption = '';
 
-    public $content ='';
+    protected $model;
 
 
     public function __construct()
     {
-        //...
+        $this->layout = App::$layout;
+        $this->model = self::getModel();
     }
 
     protected function render($view, $params = []/*, $return = false*/)
@@ -28,11 +32,19 @@ class Controller
             extract($params);
             ob_start();
             include($file);
-            $this->content = ob_get_clean();
+            $content = ob_get_clean();
         } else {
             throw new Exception('Can\'t find requested page.');
         }
-        include_once(BASE_PATH.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.App::$layout.'.php');
+        $layout = BASE_PATH
+            .DIRECTORY_SEPARATOR
+            .'views'
+            .DIRECTORY_SEPARATOR
+            .'layout'
+            .DIRECTORY_SEPARATOR
+            .$this->layout
+            .'.php';
+        include_once($layout);
     }
 
     protected function getBreadcrumbs()
@@ -54,5 +66,11 @@ class Controller
         }
 
         return $bcStr;
+    }
+
+    private function getModel()
+    {
+        $modelName = str_replace('Controller', '', ucfirst(get_class($this)));
+        return new $modelName();
     }
 }
