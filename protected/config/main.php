@@ -10,7 +10,7 @@ return [
     // Application name
     'appName'           => 'WebApp',
     // Application layout
-    'layout'            => 'layout/main',
+    'layout'            => 'layout'.DIRECTORY_SEPARATOR.'main',
     // Default application controller
     'defaultController' => 'SiteController',
     // Files that will be automatically included to application
@@ -28,6 +28,7 @@ return [
     ],
     // Path parameters
     'path'              => [
+        'webRoot' => dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR.'public',
         'basePath' => dirname(dirname(__FILE__)),
         'dataPath' => dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data',
     ],

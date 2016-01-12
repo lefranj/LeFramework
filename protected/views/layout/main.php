@@ -6,6 +6,7 @@
 <html lang="en">
     <head>
         <title><?=App::$appName?></title>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.css">
@@ -43,7 +44,9 @@
         <?=$this->content?>
     </div>
     <div id="footer">
-        Powered by LeFramework v. <?=App::$version?>
+        <small class="text-muted">
+            Powered by LeFramework v. <?=App::$version?>
+        </small>
     </div>
     </body>
 </html>
