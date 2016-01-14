@@ -38,13 +38,21 @@
     </div>
 </nav>
 <!-- Content -->
-<div class="banner-big">
+<div class="banner-big bg-primary">
     <h1 class="title"><?=$this->title?></h1>
-    <p class="caption"><?=$this->caption?></p>
+    <p class="caption text-justify"><?=$this->caption?></p>
 </div>
-<main class="container">
-    <?=$content?>
+<main class="container ">
+    <div id="content" class="col-md-10">
+        <?=$content?>
+    </div>
+    <div id="sidebar" class="col-md-2">
+        <iframe src="https://discordapp.com/widget?id=136546643871793152&theme=dark" height="500"
+               width="300" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+
 </main>
+
 <footer>
     <small class="text-muted">
         Powered by LeFramework v<?=App::$version?>

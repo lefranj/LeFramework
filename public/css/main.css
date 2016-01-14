@@ -7,15 +7,15 @@ footer {
 
 .banner-big {
     width: 100%;
-    background-color: #006fba;
+    background-color: #738ad6;
     height: 260px;
     margin: -20px 0 20px;
     color: white;
 }
 
 .banner-big .title, .banner-big .caption {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
     padding-top: 40px;
     margin-left: auto;
     margin-right: auto;
@@ -26,16 +26,31 @@ footer {
 .banner-big .caption {
     padding-top: 20px;
     font-size: 28px;
-    color: #c6c6c6;
+    color: #eaeaea;
+}
+
+@media (max-width: 1400px) {
+    .container {
+        width: 1050px;
+    }
+    .banner-big .title, .banner-big .caption{
+        width: 1050px;
+    }
 }
 
 @media (max-width: 1200px) {
-    .banner-big .title, .banner-big .caption {
-        width: 1170px;
+    .container {
+        width: 750px;
+    }
+    .banner-big .title, .banner-big .caption{
+        width: 750px;
     }
 }
 @media (max-width: 992px) {
+    .container {
+        width: 620px;
+    }
     .banner-big .title, .banner-big .caption {
-        width: 970px;
+        width: 620px;
     }
 }
