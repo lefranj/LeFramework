@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: F@N
+ * Created by LeFranj.
  * Date: 29.12.2015
  * Time: 22:01
  */
@@ -19,7 +18,11 @@ class Controller
     public function __construct()
     {
         $this->layout = App::$layout;
-        $this->model = self::getModel();
+    }
+
+    public function createAddress($url)
+    {
+        return App::createAddress($url);
     }
 
     protected function render($view, $params = []/*, $return = false*/)
@@ -68,9 +71,9 @@ class Controller
         return $bcStr;
     }
 
-    private function getModel()
+    public function getModel($controller)
     {
-        $modelName = str_replace('Controller', '', ucfirst(get_class($this)));
+        $modelName = str_replace('Controller', '', ucfirst(get_class($controller)));
         return new $modelName();
     }
 }

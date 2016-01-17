@@ -1,8 +1,13 @@
 <?php
 /**
+ * Created by LeFranj.
+ * Date: 12.01.2016
+ * Time: 2:16
+ *
  * @var string $content
  */
 ?>
+<!DOCTYPE HTML>
 <html lang="en">
     <head>
         <title><?=App::$appName?></title>

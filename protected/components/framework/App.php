@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: F@N
+ * Created by LeFranj.
  * Date: 29.12.2015
  * Time: 23:07
  */
@@ -29,6 +28,14 @@ class App
         } catch (\Exception $e) {
             echo 'SERVER ERROR: '.$e;
         }
+    }
+
+    public static function createAddress($url = '')
+    {
+        $scheme = $_SERVER['REQUEST_SCHEME'];
+        $host   = $_SERVER['HTTP_HOST'];
+
+        return $scheme.'://'.$host.'/'.$url;
     }
 
     private static function _importClasses()
@@ -70,11 +77,31 @@ class App
 
     private static function startController()
     {
-        if (!isset($_REQUEST['q'])) {
+        if (empty($_SERVER['QUERY_STRING'])) {
             $controller = new self::$config['defaultController']();
             $controller->actionIndex();
         } else {
+            parse_str($_SERVER['QUERY_STRING'], $params);
+            $params = explode('/', $params['path']);
+            $controller = strtolower(ucfirst($params[0])).'Controller';
 
+            if (class_exists($controller)) {
+                $controller = new $controller();
+                if (isset($params[1])) {
+                    $action = 'action'.strtolower(ucfirst($params[1]));
+                } else {
+                    $action = 'actionIndex';
+                }
+            } elseif (count($params) == 1) {
+                $controller = new self::$config['defaultController']();
+                $action = 'action'.strtolower(ucfirst($params[0]));
+                if (!method_exists($controller, $action)) {
+                    throw new Exception('Can\'t find requested action '.$action);
+                }
+            } else {
+                throw new Exception('Can\'t find requested controller ');
+            }
+            $controller->$action();
         }
     }
 }

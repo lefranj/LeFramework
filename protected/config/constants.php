@@ -1,7 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: F@N
+ * Created by LeFranj.
  * Date: 04.01.2016
  * Time: 21:42
  */

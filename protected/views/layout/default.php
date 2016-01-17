@@ -1,22 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: F@N
+ * Created by LeFranj.
  * Date: 12.01.2016
  * Time: 2:16
  */
 ?>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <title><?=App::$appName?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="<?php echo App::createAddress("css/bootstrap.css")?>">
+    <link rel="stylesheet" href="<?php echo App::createAddress("css/bootstrap-theme.css")?>">
+    <link rel="stylesheet" href="<?php echo App::createAddress("css/bootstrap-responsive.css")?>">
+    <link rel="stylesheet" href="<?php echo App::createAddress("css/main.css")?>">
     <script type="application/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="application/javascript" src="js/bootstrap.js"></script>
-    <script type="application/javascript" src="js/main.js"></script>
+    <script type="application/javascript" src="<?php echo App::createAddress("js/bootstrap.js")?>"></script>
+    <script type="application/javascript" src="<?php echo App::createAddress("js/main.js")?>"></script>
 </head>
 <body>
 <!-- Navbar -->
