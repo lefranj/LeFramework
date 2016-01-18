@@ -11,6 +11,8 @@ class App
     public static $appName;
     public static $layout;
     public static $controller;
+    public static $path;
+    public static $params;
     public static $version = '0.1.1 (Alpha)';
 
     private static $config;
@@ -22,6 +24,8 @@ class App
             self::$config = $config;
             self::$appName = $config['appName'];
             self::$layout = $config['layout'];
+            self::$path = $config['path'];
+            self::$params = $config['params'];
             self::_importClasses();
             self::startController();
 

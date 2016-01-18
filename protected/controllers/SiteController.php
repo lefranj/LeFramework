@@ -16,12 +16,23 @@ class SiteController extends Controller
         $this->render('index');
     }
 
-    public function actionTest()
+    public function actionCollection()
     {
-        $this->title = 'Test page';
-        $this->caption = 'Test action of SiteController';
+        $this->title = 'Collection';
+        $this->caption = 'Links collection';
+        $this->layout = 'slider';
+
+        $this->render('collection', [
+            'thumbs' => BaseParser::parseIni('collection'),
+        ]);
+    }
+
+    public function actionAbout()
+    {
+        $this->title = 'About';
+        $this->caption = 'LeFramework';
         $this->layout = 'simple';
 
-        $this->render('test');
+        $this->render('about');
     }
 }

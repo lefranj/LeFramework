@@ -29,7 +29,7 @@ return [
     'path'              => [
         'webRoot' => dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR.'public',
         'basePath' => dirname(dirname(__FILE__)),
-        'dataPath' => dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data',
+        'dataDir' => dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data',
     ],
     // Custom params
     'params'            => [],

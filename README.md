@@ -1,2 +1,6 @@
 # LeFramework
-My First Simple PHP MVC framework
+This framework was created just because I was bored. But, it can be used as simple, lightweight website framework.
+
+Have fun!
+
+P.S. I will update it from time to time... Maybe...
