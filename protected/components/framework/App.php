@@ -51,11 +51,11 @@ class App
                     } elseif (is_file($path.$unit.'.php')) {
                         $path .= $unit.'.php';
                     } else {
-                        throw new Exception('Wrong import parameter: "'.$item.'"');
+                        throw new AppException('Wrong import parameter: "'.$item.'"');
                     }
                 }
             } else {
-                throw new Exception('Import param can\'t be empty!');
+                throw new AppException('Import param can\'t be empty!');
             }
 
             if (!empty($path) && is_file($path)) {
@@ -70,7 +70,7 @@ class App
                     }
                 }
             } else {
-                throw new Exception('Wrong import param!');
+                throw new AppException('Wrong import param!');
             }
         }
     }
@@ -96,10 +96,10 @@ class App
                 $controller = new self::$config['defaultController']();
                 $action = 'action'.strtolower(ucfirst($params[0]));
                 if (!method_exists($controller, $action)) {
-                    throw new Exception('Can\'t find requested action '.$action);
+                    throw new AppException('Can\'t find requested action "'.$action.'".');
                 }
             } else {
-                throw new Exception('Can\'t find requested controller ');
+                throw new AppException('Can\'t find requested controller.');
             }
             $controller->$action();
         }

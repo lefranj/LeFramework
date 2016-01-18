@@ -37,7 +37,7 @@ class Controller
             include($file);
             $content = ob_get_clean();
         } else {
-            throw new Exception('Can\'t find requested page.');
+            throw new AppException('Can\'t find requested page.');
         }
         $layout = BASE_PATH
             .DIRECTORY_SEPARATOR
