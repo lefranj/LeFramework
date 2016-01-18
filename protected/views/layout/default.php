@@ -23,17 +23,17 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?php echo $this->createAddress('index')?>">
                 <span class="glyphicon glyphicon-globe"></span>
                 <?=App::$appName?>
             </a>
         </div>
         <div class="collapse navbar-collapse">
-<!--                <ul class="nav navbar-nav">-->
-<!--                    <li>-->
-<!--                        <a href="#">Link 1</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="<?php echo $this->createAddress('test')?>">Test</a>
+                    </li>
+                </ul>
         </div>
     </div>
 </nav>

@@ -20,6 +20,7 @@ class SiteController extends Controller
     {
         $this->title = 'Test page';
         $this->caption = 'Test action of SiteController';
+        $this->layout = 'simple';
 
         $this->render('test');
     }

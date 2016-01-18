@@ -25,8 +25,8 @@ class App
             self::_importClasses();
             self::startController();
 
-        } catch (\Exception $e) {
-            echo 'SERVER ERROR: '.$e;
+        } catch (\AppException $e) {
+            echo $e;
         }
     }
 
@@ -83,18 +83,18 @@ class App
         } else {
             parse_str($_SERVER['QUERY_STRING'], $params);
             $params = explode('/', $params['path']);
-            $controller = strtolower(ucfirst($params[0])).'Controller';
+            $controller = ucfirst(strtolower($params[0])).'Controller';
 
             if (class_exists($controller)) {
                 $controller = new $controller();
                 if (isset($params[1])) {
-                    $action = 'action'.strtolower(ucfirst($params[1]));
+                    $action = 'action'.ucfirst(strtolower($params[1]));
                 } else {
                     $action = 'actionIndex';
                 }
             } elseif (count($params) == 1) {
                 $controller = new self::$config['defaultController']();
-                $action = 'action'.strtolower(ucfirst($params[0]));
+                $action = 'action'.ucfirst(strtolower($params[0]));
                 if (!method_exists($controller, $action)) {
                     throw new AppException('Can\'t find requested action "'.$action.'".');
                 }
