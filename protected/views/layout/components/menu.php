@@ -9,7 +9,13 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo $this->createAddress('Index')?>">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index">
                 <span class="glyphicon glyphicon-globe"></span>
                 <?=App::$appName?>
             </a>
@@ -17,12 +23,12 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="<?php echo $this->createAddress('About')?>">About</a>
+                    <a href="/about">About</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="<?php echo $this->createAddress('Collection')?>">Collection</a>
+                    <a href="/collection">Collection</a>
                 </li>
             </ul>
         </div>

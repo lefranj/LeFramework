@@ -17,7 +17,7 @@ foreach ($thumbs as $title => $data) :
             <div class="caption">
                 <h3><?php echo $title;?></h3>
                 <p><?php echo $data['description'];?></p>
-                <p><a href="<?php echo $data['url'];?>" class="btn btn-primary" target="_blank">Go!</a></p>
+                <p><a href="<?php echo $data['url'];?>" class="btn btn-default" target="_blank">View</a></p>
             </div>
         </div>
     </div>
