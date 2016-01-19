@@ -1,5 +1,5 @@
 # LeFramework
-This framework was created just because I was bored. But, it can be used as simple, lightweight website framework.
+This framework was created just because I was bored. But, it can be used as simple, lightweight php MVC framework for your website.
 
 Have fun!
 
