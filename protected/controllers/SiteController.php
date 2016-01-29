@@ -36,14 +36,21 @@ class SiteController extends Controller
         $this->render('about');
     }
 
-    public function actionTestApi()
+    public function actionSysInfo()
     {
-        $this->title = 'API';
-        $this->caption = 'Test';
+        $this->title = 'System';
+        $this->caption = 'info';
         $this->layout = 'simple';
-        $curl = new Curl();
-        $curl->get('http://framework.dev/api.php');
-
-        $this->render('api');
+        $params = [
+            [
+                'name' => 'Sensors',
+                'response' => SystemStatus::sensors(),
+            ],
+            [
+                'name' => 'Top',
+                'response' => SystemStatus::top(),
+            ],
+        ];
+        $this->render('sysInfo', $params);
     }
 }
