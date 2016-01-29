@@ -7,6 +7,6 @@
 ini_set('display_errors', '1');
 $config = include_once(dirname(dirname(__FILE__))."/protected/config/main.php");
 include_once(dirname(dirname(__FILE__))."/protected/config/constants.php");
-include_once(dirname(dirname(__FILE__))."/protected/components/framework/App.php");
+include_once(dirname(dirname(__FILE__)) . "/protected/components/framework/App.php");
 
 App::run($config);

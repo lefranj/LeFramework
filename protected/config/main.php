@@ -33,4 +33,7 @@ return [
     ],
     // Custom params
     'params'            => [],
+    'api'               => [
+
+    ],
 ];

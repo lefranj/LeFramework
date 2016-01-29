@@ -35,4 +35,15 @@ class SiteController extends Controller
 
         $this->render('about');
     }
+
+    public function actionTestApi()
+    {
+        $this->title = 'API';
+        $this->caption = 'Test';
+        $this->layout = 'simple';
+        $curl = new Curl();
+        $curl->get('http://framework.dev/api.php');
+
+        $this->render('api');
+    }
 }

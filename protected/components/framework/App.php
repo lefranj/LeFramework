@@ -26,7 +26,7 @@ class App
             self::$layout = $config['layout'];
             self::$path = $config['path'];
             self::$params = $config['params'];
-            self::_importClasses();
+            self::importClasses();
             self::startController();
 
         } catch (\AppException $e) {
@@ -42,7 +42,7 @@ class App
         return $scheme.'://'.$host.'/'.$url;
     }
 
-    private static function _importClasses()
+    private static function importClasses()
     {
         foreach (self::$config['import'] as $item) {
             $stash = explode('.', $item);
@@ -87,18 +87,18 @@ class App
         } else {
             parse_str($_SERVER['QUERY_STRING'], $params);
             $params = explode('/', $params['path']);
-            $controller = ucfirst(strtolower($params[0])).'Controller';
+            $controller = ucfirst($params[0]).'Controller';
 
             if (class_exists($controller)) {
                 $controller = new $controller();
                 if (isset($params[1])) {
-                    $action = 'action'.ucfirst(strtolower($params[1]));
+                    $action = 'action'.ucfirst($params[1]);
                 } else {
                     $action = 'actionIndex';
                 }
             } elseif (count($params) == 1) {
                 $controller = new self::$config['defaultController']();
-                $action = 'action'.ucfirst(strtolower($params[0]));
+                $action = 'action'.ucfirst($params[0]);
                 if (!method_exists($controller, $action)) {
                     throw new AppException('Can\'t find requested action "'.$action.'".');
                 }

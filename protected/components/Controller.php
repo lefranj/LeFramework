@@ -50,6 +50,22 @@ class Controller
         include_once($layout);
     }
 
+    protected function renderPart($view, $params = []/*, $return = false*/)
+    {
+        $controller = str_replace('Controller', '', lcfirst(get_class($this)));
+        $file = BASE_PATH.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR .$controller
+            .DIRECTORY_SEPARATOR.$view.'.php';
+        if (is_file($file)) {
+            extract($params);
+            ob_start();
+            include($file);
+            $content = ob_get_clean();
+            echo $content;
+        } else {
+            throw new AppException('Can\'t find requested page.');
+        }
+    }
+
     protected function getBreadcrumbs()
     {
         $default = [
