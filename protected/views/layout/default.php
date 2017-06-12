@@ -31,7 +31,7 @@
     <div id="content" class="col-md-10">
         <?=$content?>
     </div>
-    <?php include('components/sidebar.php');?>
+    <?php //include('components/sidebar.php');?>
 
 </main>
 
