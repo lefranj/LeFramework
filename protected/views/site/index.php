@@ -24,7 +24,13 @@
     molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
     maiores alias consequatur aut perferendis doloribus asperiores repellat.
 </p>
+<?php
+if (DEV_MODE) :
+?>
 <p class="lead">You can edit this page by modifying file:</p>
 <code>
-    <?=__FILE__?>
+    <?php echo __FILE__;?>
 </code>
+<?php
+endif;
+?>

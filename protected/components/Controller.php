@@ -39,6 +39,13 @@ class Controller
         } else {
             throw new AppException('Can\'t find requested page.');
         }
+
+        if (DEV_MODE) {
+            $prefix = '';
+        } else {
+            $prefix = '.min';
+        }
+
         $layout = BASE_PATH
             .DIRECTORY_SEPARATOR
             .'views'
@@ -47,6 +54,7 @@ class Controller
             .DIRECTORY_SEPARATOR
             .$this->layout
             .'.php';
+
         include_once($layout);
     }
 

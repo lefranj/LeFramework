@@ -32,7 +32,9 @@ return [
         'dataDir' => dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data',
     ],
     // Custom params
-    'params'            => [],
+    'params'            => [
+        'dev' => true // IMPORTANT!!! Set this option to "false" in production mode.
+    ],
     'api'               => [
 
     ],
