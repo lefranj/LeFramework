@@ -13,7 +13,7 @@ class App
     public static $controller;
     public static $path;
     public static $params;
-    public static $version = '0.1.1 (Alpha)';
+    public static $version = '0.1.2 (Alpha)';
 
     private static $config;
 

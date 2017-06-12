@@ -3,6 +3,9 @@
  * Created by LeFranj.
  * Date: 12.01.2016
  * Time: 2:16
+ *
+ * @var string $content
+ * @var string $isMin
  */
 ?>
 <!DOCTYPE HTML>
@@ -18,7 +21,7 @@
     <link rel="stylesheet" href="<?php echo App::createAddress("css/main.css");?>">
     <script type="application/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="<?php echo App::createAddress("js/bootstrap.min.js");?>"></script>
-    <script type="application/javascript" src="<?php echo App::createAddress("js/main".$prefix.".js");?>"></script>
+    <script type="application/javascript" src="<?php echo App::createAddress("js/main".$isMin.".js");?>"></script>
 </head>
 <body>
 <?php include('components/menu.php');?>

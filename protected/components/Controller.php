@@ -41,9 +41,9 @@ class Controller
         }
 
         if (DEV_MODE) {
-            $prefix = '';
+            $isMin = '';
         } else {
-            $prefix = '.min';
+            $isMin = '.min';
         }
 
         $layout = BASE_PATH
